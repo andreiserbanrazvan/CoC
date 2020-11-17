@@ -1,12 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class building : MonoBehaviour
 {
-    public int health = 100;
+    public int maxHealth = 100;
+    public int currentHealth;
 
-
+    public hpbar hpbar;
+    bool exclusive = true;
     public bool destroyed;
     public Transform house, house_des;
     public ParticleSystem particle;
@@ -14,6 +15,9 @@ public class building : MonoBehaviour
 
     void Start()
     {
+        currentHealth = maxHealth;
+        hpbar.SetMaxHealth(maxHealth);
+
         house.gameObject.SetActive(true);
         house_des.gameObject.SetActive(false);
     }
@@ -21,6 +25,18 @@ public class building : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage(20);
+        }
+
+        if (currentHealth > 30 ^ exclusive)
+        {
+            destroyed = true;
+            exclusive = false;
+        }
+
         if (destroyed)
         {
             Instantiate(particle, house_des.transform);
@@ -31,4 +47,18 @@ public class building : MonoBehaviour
         destroyed = false;
        
     }
+
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        hpbar.SetHealth(currentHealth);
+    }
+
+    private void OnMouseDown()
+    {
+        TakeDamage(20);
+    }
+
+
 }

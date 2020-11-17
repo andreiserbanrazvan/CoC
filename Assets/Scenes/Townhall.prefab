@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595353036a1a714438fbffa013e966a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
+  rank: 1
   destroyed: 0
   house: {fileID: 5142255705379066092}
   house_des: {fileID: 5142255705855239235}

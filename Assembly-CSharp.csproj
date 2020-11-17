@@ -67,6 +67,7 @@
     <Compile Include="Assets\AurynSky\Forest Pack\Scripts\MaterialMover.cs" />
     <Compile Include="Assets\AurynSky\Forest Pack\Scripts\Rotator.cs" />
     <Compile Include="Assets\AurynSky\Forest Pack\Scripts\WheelController.cs" />
+    <Compile Include="Assets\Scenes\hpbar.cs" />
     <Compile Include="Assets\building.cs" />
     <Compile Include="Assets\strategyCamera.cs" />
     <None Include="Assets\Meshtint Free Barbarian\www.meshtint.com.txt" />
